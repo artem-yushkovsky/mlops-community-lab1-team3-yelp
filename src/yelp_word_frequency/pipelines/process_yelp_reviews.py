@@ -38,6 +38,8 @@ def process_yelp_reviews(threads=1, force=False):
         outputDataset=reviews,
     )
     createReviewDocuments = CreateReviewDocuments(
+        logAtEachN=10_000,
+        spacyModelName='en_core_web_sm',
         inputDatasets=[reviews],
         loadedInputDatasets=[businesses],
         outputDataset=reviewDocuments,
