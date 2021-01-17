@@ -38,6 +38,6 @@ class CreateBusinesses(Task):
             review_count=data['review_count'],
             is_open=data['is_open'],
             attributes=[],
-            categories=[category.strip() for category in data['categories'].split(',')],
+            categories=[category.strip() for category in (data['categories'] or '').split(',')],
             hours=[]
         ))
