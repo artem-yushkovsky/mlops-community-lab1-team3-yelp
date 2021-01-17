@@ -1,3 +1,4 @@
+import json
 from itertools import islice
 from hypergol import Job
 from hypergol import Task
