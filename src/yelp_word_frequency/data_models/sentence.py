@@ -7,15 +7,15 @@ from data_models.token import Token
 
 class Sentence(BaseData):
 
-    def __init__(self, startChar: int, endChar: int, articleId: int, sentenceId: int, tokens: List[Token]):
+    def __init__(self, startChar: int, endChar: int, reviewId: str, sentenceId: int, tokens: List[Token]):
         self.startChar = startChar
         self.endChar = endChar
-        self.articleId = articleId
+        self.reviewId = reviewId
         self.sentenceId = sentenceId
         self.tokens = tokens
 
     def get_id(self):
-        return (self.articleId, self.sentenceId, )
+        return (self.reviewId, self.sentenceId, )
 
     def to_data(self):
         data = self.__dict__.copy()

@@ -18,7 +18,7 @@ class CreateReviewDocuments(Task):
         self.categories = {business.business_id: business.categories for business in self.loadedData[0]}
 
     def run(self, review, businesses):
-        reviewDocument = Article(
+        reviewDocument = ReviewDocument(
             review_id=review.review_id,
             user_id=review.user_id,
             business_id=review.business_id,
@@ -37,7 +37,7 @@ class CreateReviewDocuments(Task):
             reviewDocument.sentences.append(Sentence(
                 startChar=sentence[0].idx,
                 endChar=sentence[-1].idx+len(str(sentence[-1])),
-                articleId=article.articleId,
+                reviewId=review.review_id,
                 sentenceId=k,
                 tokens=[Token(
                     i=token.i-tokenOffset,

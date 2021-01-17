@@ -10,7 +10,7 @@ class TestSentence(TestCase):
 
     def __init__(self, methodName):
         super(TestSentence, self).__init__(methodName=methodName)
-        self.sentence = Sentence(startChar=0, endChar=0, articleId=0, sentenceId=0, tokens=None)
+        self.sentence = Sentence(startChar=0, endChar=0, reviewId=0, sentenceId=0, tokens=None)
 
     def setUp(self):
         super().setUp()

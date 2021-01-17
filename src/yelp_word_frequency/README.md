@@ -12,7 +12,7 @@ python -m hypergol.cli.create_data_model Business business_id:str name:str addre
 python3 -m hypergol.cli.create_data_model Review review_id:str user_id:str business_id:str:id stars:float useful:int funny:int cool:int text:str date:str --force
 
 python -m hypergol.cli.create_data_model Token i:int startChar:int endChar:int depType:str depHead:int depLeftEdge:int depRightEdge:int posType:str posFineType:str lemma:str text:str
-python -m hypergol.cli.create_data_model Sentence startChar:int endChar:int articleId:int:id sentenceId:int:id "tokens:List[Token]"
+python -m hypergol.cli.create_data_model Sentence startChar:int endChar:int reviewId:int:id sentenceId:int:id "tokens:List[Token]"
 python -m hypergol.cli.create_data_model ReviewDocument review_id:str user_id:str business_id:str:id stars:float useful:int funny:int cool:int text:str date:str "sentences:List[Sentence]"
 
 python3 -m hypergol.cli.create_task CreateBusinesses Business --source
