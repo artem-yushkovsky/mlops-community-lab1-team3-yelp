@@ -40,7 +40,7 @@ def process_yelp_reviews(threads=1, force=False):
     createReviewDocuments = CreateReviewDocuments(
         inputDatasets=[reviews],
         loadedInputDatasets=[businesses],
-        outputDataset=reviewDocumentss,
+        outputDataset=reviewDocuments,
     )
 
     pipeline = Pipeline(
