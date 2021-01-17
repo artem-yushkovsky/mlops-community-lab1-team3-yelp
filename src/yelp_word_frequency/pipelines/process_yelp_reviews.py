@@ -35,8 +35,7 @@ def process_yelp_reviews(threads=1, force=False):
     createReviews = CreateReviews(
         yelpReviewsJsonPath=f'{BASE_DIRECTORY}/reviews/yelp_academic_dataset_review.json', 
         splits=20,
-        outputDataset=reviews,
-        debug=True
+        outputDataset=reviews
     )
     createReviewDocuments = CreateReviewDocuments(
         logAtEachN=10_000,
@@ -48,7 +47,7 @@ def process_yelp_reviews(threads=1, force=False):
 
     pipeline = Pipeline(
         tasks=[
-            # createBusinesses,
+            createBusinesses,
             createReviews,
             # createReviewDocuments,
         ]
