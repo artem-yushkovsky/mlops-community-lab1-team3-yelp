@@ -49,8 +49,8 @@ def process_yelp_reviews(threads=1, force=False):
     pipeline = Pipeline(
         tasks=[
             createBusinesses,
-            createReviews,
-            createReviewDocuments,
+            # createReviews,
+            # createReviewDocuments,
         ]
     )
     pipeline.run(threads=threads)
