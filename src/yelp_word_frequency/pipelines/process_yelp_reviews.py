@@ -33,7 +33,7 @@ def process_yelp_reviews(threads=1, force=False):
         outputDataset=businesses
     )
     createReviews = CreateReviews(
-        yelpReviewsJsonPath=f'{BASE_DIRECTORY}/reviews/yelp_academic_dataset_business.json', 
+        yelpReviewsJsonPath=f'{BASE_DIRECTORY}/reviews/yelp_academic_dataset_review.json', 
         splits=20,
         outputDataset=reviews,
         debug=True
