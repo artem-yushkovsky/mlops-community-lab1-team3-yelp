@@ -31,18 +31,19 @@ def process_yelp_reviews(threads=1, force=False):
         yelpBusinessJsonPath=f'{BASE_DIRECTORY}/reviews/yelp_academic_dataset_business.json',
         splits=20,
         outputDataset=businesses,
+        debug=True
     )
     createReviews = CreateReviews(
         yelpReviewsJsonPath=f'{BASE_DIRECTORY}/reviews/yelp_academic_dataset_business.json', 
         splits=20,
-        outputDataset=reviews,
+        outputDataset=reviews
     )
     createReviewDocuments = CreateReviewDocuments(
         logAtEachN=10_000,
         spacyModelName='en_core_web_sm',
         inputDatasets=[reviews],
         loadedInputDatasets=[businesses],
-        outputDataset=reviewDocuments,
+        outputDataset=reviewDocuments
     )
 
     pipeline = Pipeline(
