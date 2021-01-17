@@ -5,7 +5,7 @@ from data_models.review import Review
 
 class CreateReviews(Task):
 
-    def __init__(self, yelpReviewsJsonPath, *args, **kwargs):
+    def __init__(self, yelpReviewsJsonPath, splits, *args, **kwargs):
         super(CreateReviews, self).__init__(*args, **kwargs)
         self.yelpBusinessJsonPath = yelpBusinessJsonPath
         self.splits = splits
