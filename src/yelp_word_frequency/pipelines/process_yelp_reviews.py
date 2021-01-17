@@ -42,14 +42,15 @@ def process_yelp_reviews(threads=1, force=False):
         spacyModelName='en_core_web_sm',
         inputDatasets=[reviews],
         loadedInputDatasets=[businesses],
-        outputDataset=reviewDocuments
+        outputDataset=reviewDocuments,
+        debug=True
     )
 
     pipeline = Pipeline(
         tasks=[
-            createBusinesses,
-            createReviews,
-            # createReviewDocuments,
+            # createBusinesses,
+            # createReviews,
+            createReviewDocuments,
         ]
     )
     pipeline.run(threads=threads)
