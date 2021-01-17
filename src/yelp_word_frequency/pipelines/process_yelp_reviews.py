@@ -23,9 +23,9 @@ def process_yelp_reviews(threads=1, force=False):
         force=force
     )
 
-    businesses = project.datasetFactory.get(dataType=Business, name='businesses')
-    reviews = project.datasetFactory.get(dataType=Review, name='reviews')
-    reviewDocuments = project.datasetFactory.get(dataType=ReviewDocument, name='review_documents')
+    businesses = project.datasetFactory.get(dataType=Business, name='businesses', chunkCount=256)
+    reviews = project.datasetFactory.get(dataType=Review, name='reviews', chunkCount=256)
+    reviewDocuments = project.datasetFactory.get(dataType=ReviewDocument, name='review_documents', chunkCount=256)
 
     createBusinesses = CreateBusinesses(
         yelpBusinessJsonPath=f'{BASE_DIRECTORY}/reviews/yelp_academic_dataset_business.json',
